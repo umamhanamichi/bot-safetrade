@@ -1,0 +1,15 @@
+services:
+  bot:
+    build: .
+    image: safetrade-autosell-bot
+    container_name: safetrade-bot
+    restart: unless-stopped        # auto-restart jika crash atau VPS reboot
+    env_file:
+      - .env                       # kredensial & konfigurasi dari .env
+    volumes:
+      - ./logs:/app/logs           # log persisten di luar container
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

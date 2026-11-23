@@ -1,0 +1,21 @@
+# Environment
+.env
+
+# Logs
+bot.log
+bot_nohup.log
+*.log
+logs/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
